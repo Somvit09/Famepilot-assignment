@@ -14,6 +14,8 @@ def a_group_by_owners(k):
         if val in new_dict:
             new_list.append(new_dict[val])
             new_list.append(key)
+            if [] in new_list:
+                new_list.remove([])
             new_dict[val] = new_list
         else:
             new_dict[val] = key
@@ -22,6 +24,8 @@ sample_dictionary = {
  'Input.txt': 'Randy',
  'Code.py': 'Stan',
  'Output.txt': 'Randy',
+ 'input.py': 'Randy'
  }
 x = a_group_by_owners(sample_dictionary)
+print(x['Randy'][2])
 print(x)

@@ -25,7 +25,7 @@ def registration_view(request):
 
 def logout_view(request):
     logout(request)
-    return redirect('/')
+    return redirect('login_view')
 
 
 def login_view(request):
@@ -85,3 +85,12 @@ def account_view(request):
 
 def must_authenticate_view(request):
     return render(request, 'account/must_authenticate.html', {})
+
+
+def login_(request):
+    return render(request, 'account/login.html')
+
+
+def register(request):
+    return render(request, 'account/register.html')
+

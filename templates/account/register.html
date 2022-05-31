@@ -46,18 +46,19 @@
 
 
 <form class="form-signin" method="post">{% csrf_token %}
-<div class="d-flex flex-column pb-3">
-  <img class="img-fluid mx-auto d-block" src="{% static 'codingwithmitch_logo.png' %}" alt="codingwithmitch logo" width="72" height="72">
-</div>
   <h1 class="h3 mb-3 font-weight-normal">Register an account</h1>
 
   <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
 
   <input type="text" name="username" id="inputUsername" class="form-control" placeholder="Username" required>
-  
+
   <input type="password" name="password1" id="inputPassword1" class="form-control" placeholder="Password" required>
 
   <input type="password" name="password2" id="inputPassword2" class="form-control" placeholder="Confirm password" required>
+
+  <input type="datetime" name="date_of_birth" class="form-control" placeholder="Date of Birth" required>
+
+  <input type="number" name="phone_number" class="form-control" placeholder="Phone Number" required>
 
   {% for field in registration_form %}
       <p>
@@ -70,7 +71,7 @@
     <div style="color: red">
       <p>{{registration_form.non_field_errors}}</p>
     </div>
-      
+
   {% endif %}
 
   <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
@@ -79,6 +80,3 @@
 
 
 {% endblock content %}
-
-
-
